@@ -1,0 +1,41 @@
+version: "2.4"
+
+services:
+  nginx:
+    image: nginx:1.17.2-alpine
+    container_name: nginx
+    volumes:
+      - ./default.nginx:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - frontend
+      - backend
+    networks:
+      - wavesenterprise
+    links:
+      - frontend
+      - backend
+    ports:
+      - 1337:1337
+      - 3000:3000
+
+  frontend:
+    container_name: frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    networks:
+      - wavesenterprise
+
+  backend:
+    container_name: backend
+    environment:
+      - VIRTUAL_HOST=localhost:1337
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    networks:
+      - wavesenterprise
+
+networks:
+  wavesenterprise:
+    driver: bridge
