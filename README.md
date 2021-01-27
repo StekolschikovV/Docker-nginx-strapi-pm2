@@ -1,2 +1,2 @@
 # Docker: nginx + strapi + pm2
-Configuration for server, client and port proxying deployment.
+Configuration for deploying backend server, front server, server for proxying requests and ports.
