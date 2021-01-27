@@ -1,8 +1,8 @@
 FROM strapi/base:latest
 
 LABEL authors="Vitaly Stekolschikov <v.a.stekolschikov@gmail.com>" \
-      org.label-schema.vendor="Waves Association Site Frontend" \
-      org.label-schema.name="Waves Association Site Frontend Docker Image" \
+      org.label-schema.vendor="Waves Association Site Backend" \
+      org.label-schema.name="Waves Association Site Backend Docker Image" \
       org.label-schema.description="Waves Association Site" \
       org.label-schema.url="https://wavesassociation.org" \
       org.label-schema.schema-version="1.0"
